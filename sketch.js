@@ -112,6 +112,3 @@ var responseJSON = await response.json();
 backgroundImg=loadImage(bg);
 console.log(backgroundImg);
 }
-setTimeout(function() {
-    location. reload();
-    }, 30000);
