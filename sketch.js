@@ -58,16 +58,16 @@ if(minutes === "undefined" || hours === "undefined"){
 async function getBackgroundImg(){
 
     // write code to fetch time from API
-  var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
+  var response = await fetch("https://api.ipgeolocation.io/timezone?apiKey=d1a17fb32b9d45c2bd8bde822da9c6cd&tz=Asia/Kolkata");
     //change the data in JSON format
 var responseJSON = await response.json();
     // write code slice the datetime
 
-    var datetime = responseJSON.datetime;
+    var datetime = responseJSON.date_time;
  
     hours= datetime.slice(11,13);
     minutes = datetime.slice(14,16);
-    console.log(minutes);
+    console.log(hours);
 
     // add conditions to change the background images from sunrise to sunset
     if(hours>=04 && hours<=06 ){
@@ -112,3 +112,6 @@ var responseJSON = await response.json();
 backgroundImg=loadImage(bg);
 console.log(backgroundImg);
 }
+setTimeout(function() {
+    location. reload();
+    }, 30000);
